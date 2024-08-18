@@ -433,11 +433,7 @@ footer h1, footer h2, footer h3, footer p {
 
 /* Estilos para dispositivos con un ancho de 375px a 767px */
 @media (min-width: 52px) and (max-width: 767px) {
-    /* Estilos para móviles y pequeñas tablets */
-    body {
-       
-        
-        
+    body {    
         margin: 0;
         padding: 0;
         display: flex;
@@ -492,11 +488,7 @@ footer h1, footer h2, footer h3, footer p {
 
 /* Estilos para dispositivos con un ancho de 768px a 1279px */
 @media (min-width: 768px) and (max-width: 1200px) {
-    /* Estilos para tablets en modo horizontal y pequeños monitores */
-    body {
-       
-        
-        
+    body {  
         margin: 0;
         padding: 0;
         display: flex;
