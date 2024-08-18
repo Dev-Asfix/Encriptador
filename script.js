@@ -62,7 +62,25 @@ async function CopiarTexto(){
     }
 }
 
-textArea.addEventListener("keypress", function(event) {
+textArea.addEventListener("input", function(event) {
+    const value = event.target.value;
+    const acentos = ['á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú'];
+    let nuevoValor = '';
+
+    for (let i = 0; i < value.length; i++) {
+        const char = value[i];
+        if (acentos.includes(char)) {
+           
+            continue;
+        }
+       
+        nuevoValor += char.toLowerCase();
+    }
+
+    event.target.value = nuevoValor;
+});
+
+textArea.addEventListener("keydown", function(event) {
     const key = event.key;
     const acentos = ['á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú'];
 
@@ -72,7 +90,7 @@ textArea.addEventListener("keypress", function(event) {
 
     if (key === key.toUpperCase() && key !== key.toLowerCase()) {
         event.preventDefault();
-        textArea.value += key.toLowerCase(); 
+        textArea.value += key.toLowerCase();
     }
-
 });
+
