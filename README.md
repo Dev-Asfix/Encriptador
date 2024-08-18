@@ -1,6 +1,6 @@
 # 🌟 **Encriptador de Texto Futurista** 🌟
 
-Desarrollado por **Pablo Aldair Rosas Ramírez** para el **Challenge de Alura** en la **Beca de Oracle**.
+Desarrollado por **Pablo Rosas Ramírez** para el **Challenge de Alura** en la **Beca de Oracle**.
 
 ---
 
