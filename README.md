@@ -18,6 +18,13 @@ Este proyecto combina un diseño moderno con una funcionalidad eficiente para en
 ![Encriptador de Texto](/capturas/Captura2.png)  
 *Diseño Futurista del Encriptador*
 
+## 🚀 **Responsivo**
+![Encriptador de Texto](/capturas/Captura3.png)  
+*Diseño Responsivo*
+
+![Encriptador de Texto](/capturas/Captura4.png)  
+*Diseño Responsivo*
+
 ### **Características Principales**
 
 - **Interfaz Interactiva:** Estilo oscuro con colores cian y magenta.
