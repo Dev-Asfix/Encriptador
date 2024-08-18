@@ -26,6 +26,6 @@ Este proyecto combina un diseño moderno con una funcionalidad eficiente para en
   - Desencriptación de texto.
   - Copia al portapapeles.
   - Validación de entrada para mayor precisión.
-  - No se puede escribir tildes , ni mayúculas 
+  - No se puede escribir tildes , ni mayúculas.
 
 ---
