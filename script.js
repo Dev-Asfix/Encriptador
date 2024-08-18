@@ -72,7 +72,7 @@ textArea.addEventListener("keypress", function(event) {
 
     if (key === key.toUpperCase() && key !== key.toLowerCase()) {
         event.preventDefault();
-        textArea.value += key.toLowerCase(); // Añadir la versión en minúscula
+        textArea.value += key.toLowerCase(); 
     }
 
 });
