@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,
+    wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+    
+    <title>Encriptador</title>
+</head>
+<body>
+    <header >
+        <img class="logo"src="imagenes/Frame 6.png" alt="Logo de Alura" >
+        <h1>Alura</h1>
+        
+    </header>
+    <main >
+        
+        <section class="section-1">
+            <textarea class="text-area" cols="30" rows="10" placeholder="↳ Ingrese el texto aqui ↲"></textarea>
+            <div >
+                <h6 class="informacion"> <img src="imagenes/Signo.png"> Solo letras minusculas y sin acento</h6>
+            </div>
+            
+            <div class="botones">
+                <button class="btn-encriptar" onclick="btnEncriptar()">Encriptar ▣ </button>
+                <button class="btn-desencriptar" onclick="btnDesencriptar()">Desencriptar ▢</button>
+                <a class="actualizar-pagina" href="index.html">
+                    <img class="actualizar-pagina" src="assets/actualizar.png" alt="imagen-actualizar" width="67" height="67">
+                </a>
+                
+            </div>
+            <div class="imagen-lupa">
+                <img class="imagen-lu" src="/imagenes/Muñeco2.png" alt="Imagen-de-investigacion" >
+            </div>
+        </section>
+
+        <section class="resultados">
+            <textarea id="mensaje-copiar" class="mensaje" cols="20" rows="10" disabled></textarea>
+            <div class="boton-copy">
+                <button id="boton-copiar" class="btn-copiar" onclick="CopiarTexto()">
+                    Copiar ❍
+                    
+                </button>
+                
+            </div>
+
+            <div class="presentacion-enlaces">
+                <h2 class="presentacion-enlace-subtitulo"> 𝇛 Accede a mis redes </h2>
+                <a class="presentacion-enlaces-link" href="https://www.tiktok.com/@dev_asfix?_t=8ox5VN74lIz&_r=1">
+                    <img class=tiktok src="./assets/tik-tok.png " alt="Imagen-Instagram" width="32" height="32">                  
+                    TikTok
+                </a>
+                <a class="presentacion-enlaces-link" href="https://github.com/Dev-Asfix">
+                    <img src="./assets/github.png" alt="Imagen-Github">
+                    GitHub</a>
+
+                <a class="presentacion-enlaces-link" href="https://www.linkedin.com/in/pablo-rosas-dev/">
+                    <img src="./assets/linkedin.png" alt="Imagen-Linkedin">
+                    Linkedin
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+    <footer class="footer">
+        <img src="assets/github.png"> Desarrollador   
+        <a href="https://github.com/Dev-Asfix" class="footer-nombre"> : Pablo Rosas Ramirez ϟ @dev_asfix</a>
+    </footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
