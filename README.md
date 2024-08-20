@@ -48,7 +48,7 @@ La letra "u" es convertida para "ufat " */
 ```
 ---
 
-## 🚀 Enlace a mi página
+## 🚀 Enlace a mi página |
 
 [Encriptador](https://encriptador-sigma-khaki.vercel.app/)
 
