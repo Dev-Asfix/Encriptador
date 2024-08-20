@@ -37,7 +37,7 @@ Este proyecto combina un diseño moderno con una funcionalidad eficiente para en
 
 ---
 
-## ¿Cómo encripta?
+## ¿Cómo encripta - Codificación?
 
 ```javascript
 /* La letra "e" es convertida para "enter"
