@@ -6,7 +6,7 @@ Desarrollado por **Pablo Rosas Ramírez** para el **Challenge de Alura** en la *
 
 ## 📜 **Introducción**
 
-Este proyecto combina un diseño moderno con una funcionalidad eficiente para encriptar y desencriptar mensajes. 
+Este proyecto combina un diseño moderno con una funcionalidad eficiente para encriptar y desencriptar mensajes (El desafio fue propuesto en Alura Latam). 
 
 ---
 
