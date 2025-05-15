@@ -1,68 +1,59 @@
 const textArea = document.querySelector(".text-area");
 const mensaje = document.querySelector(".mensaje");
 
-/* La letra "e" es convertida para "enter"
-La letra "i" es convertida para "imes"
-La letra "a" es convertida para "ai"
-La letra "o" es convertida para "ober"
-La letra "u" es convertida para "ufat" */
+// Nuevo sistema de codificación raro basado en PFAV
+const codigosMutantes = [
+    ["a", "P@bL0_19x!"],
+    ["e", "F3r#N_Δz"],
+    ["i", "ViCt0|2_rR"],
+    ["o", "Al3X-09_Dr"],
+    ["u", "U_f*Vk!77"]
+];
 
-function btnEncriptar(){
-    const textoEncriptado = encriptar(textArea.value);
+function btnEncriptar() {
+    const textoEncriptado = encriptarPFAV_Raro(textArea.value);
     mensaje.value = textoEncriptado;
-    textArea.value = "";mensaje.style.backgroundImage = "none";
+    textArea.value = "";
+    mensaje.style.backgroundImage = "none";
 }
 
-function encriptar(stringEncriptada){
-    let matrizCodigo = [["e", "enter"], ["i","imes"], ["a", "ai"], ["o","ober"], ["u","ufat"]];
-    console.table(matrizCodigo)
-    stringEncriptada = stringEncriptada.toLowerCase()
+function btnDesencriptar() {
+    const textoDesencriptado = desencriptarPFAV_Raro(textArea.value);
+    mensaje.value = textoDesencriptado;
+    textArea.value = "";
+    mensaje.style.backgroundImage = "none";
+}
 
-    for(let i=0; i< matrizCodigo.length;i++){
-        if(stringEncriptada.includes(matrizCodigo[i][0])){
-            stringEncriptada= stringEncriptada.replaceAll(matrizCodigo[i][0],matrizCodigo[i][1])
-        }
+function encriptarPFAV_Raro(texto) {
+    texto = texto.toLowerCase();
+    for (let [letra, codigo] of codigosMutantes) {
+        texto = texto.replaceAll(letra, codigo);
     }
-    return stringEncriptada
-
+    return texto;
 }
 
-
-function btnDesencriptar(){
-    const textoEncriptado = desencriptar(textArea.value);
-    mensaje.value = textoEncriptado;
-    textArea.value = "";mensaje.style.backgroundImage = "none";
-   
-}
-
-function desencriptar(stringDesencriptada){
-    let matrizCodigo = [["e", "enter"], ["i","imes"], ["a", "ai"], ["o","ober"], ["u","ufat"]];
-    console.table(matrizCodigo)
-    stringDesencriptada = stringDesencriptada.toLowerCase()
-
-    for(let i=0; i< matrizCodigo.length;i++){
-        if(stringDesencriptada.includes(matrizCodigo[i][1])){
-            stringDesencriptada= stringDesencriptada.replaceAll(matrizCodigo[i][1],matrizCodigo[i][0])
-        }
+function desencriptarPFAV_Raro(texto) {
+    texto = texto.toLowerCase();
+    for (let [letra, codigo] of codigosMutantes) {
+        texto = texto.replaceAll(codigo.toLowerCase(), letra);
     }
-    return stringDesencriptada
-
+    return texto;
 }
 
-async function CopiarTexto(){
-    try{
+async function CopiarTexto() {
+    try {
         const textAreaCopy = document.getElementById('mensaje-copiar');
         const texto = textAreaCopy.value;
 
         await navigator.clipboard.writeText(texto);
-
-        alert('Copiado Correctamente.')
-    } catch(err){
-        console.error('Error al copiar al portapapeles: ', err)
+        alert('Copiado Correctamente.');
+    } catch (err) {
+        console.error('Error al copiar al portapapeles: ', err);
     }
 }
 
-textArea.addEventListener("input", function(event) {
+// Eliminar acentos y forzar minúsculas al escribir
+textArea.addEventListener("input", function (event) {
     const value = event.target.value;
     const acentos = ['á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú'];
     let nuevoValor = '';
@@ -70,17 +61,15 @@ textArea.addEventListener("input", function(event) {
     for (let i = 0; i < value.length; i++) {
         const char = value[i];
         if (acentos.includes(char)) {
-           
             continue;
         }
-       
         nuevoValor += char.toLowerCase();
     }
 
     event.target.value = nuevoValor;
 });
 
-textArea.addEventListener("keydown", function(event) {
+textArea.addEventListener("keydown", function (event) {
     const key = event.key;
     const acentos = ['á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú'];
 
@@ -93,4 +82,3 @@ textArea.addEventListener("keydown", function(event) {
         textArea.value += key.toLowerCase();
     }
 });
-
