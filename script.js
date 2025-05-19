@@ -1,13 +1,17 @@
 const textArea = document.querySelector(".text-area");
 const mensaje = document.querySelector(".mensaje");
 
-// Nuevo sistema de codificación raro basado en PFAV
 const codigosMutantes = [
-    ["a", "P@bL0_19x!"],
+    ["a", "0@0L0_19x!"],
+    ["A", "Ax#0A!_Pf1"],
     ["e", "F3r#N_Δz"],
-    ["i", "ViCt0|2_rR"],
-    ["o", "Al3X-09_Dr"],
-    ["u", "U_f*Vk!77"]
+    ["E", "Ez!_R03#P"],
+    ["i", "$iCt0|2_rR"],
+    ["I", "I_7r#S3x!"],
+    ["o", "?l3X-09_Dr"],
+    ["O", "Ox@_0Lm9?"],
+    ["u", "U_f*Vk!77"],
+    ["U", "U_U77*Pf$"]
 ];
 
 function btnEncriptar() {
@@ -25,7 +29,6 @@ function btnDesencriptar() {
 }
 
 function encriptarPFAV_Raro(texto) {
-    texto = texto.toLowerCase();
     for (let [letra, codigo] of codigosMutantes) {
         texto = texto.replaceAll(letra, codigo);
     }
@@ -33,9 +36,8 @@ function encriptarPFAV_Raro(texto) {
 }
 
 function desencriptarPFAV_Raro(texto) {
-    texto = texto.toLowerCase();
     for (let [letra, codigo] of codigosMutantes) {
-        texto = texto.replaceAll(codigo.toLowerCase(), letra);
+        texto = texto.replaceAll(codigo, letra);
     }
     return texto;
 }
@@ -44,7 +46,6 @@ async function CopiarTexto() {
     try {
         const textAreaCopy = document.getElementById('mensaje-copiar');
         const texto = textAreaCopy.value;
-
         await navigator.clipboard.writeText(texto);
         alert('Copiado Correctamente.');
     } catch (err) {
@@ -52,7 +53,7 @@ async function CopiarTexto() {
     }
 }
 
-// Eliminar acentos y forzar minúsculas al escribir
+// Ya no forzamos a minúsculas ni bloqueamos mayúsculas
 textArea.addEventListener("input", function (event) {
     const value = event.target.value;
     const acentos = ['á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú'];
@@ -60,25 +61,10 @@ textArea.addEventListener("input", function (event) {
 
     for (let i = 0; i < value.length; i++) {
         const char = value[i];
-        if (acentos.includes(char)) {
-            continue;
+        if (!acentos.includes(char)) {
+            nuevoValor += char;
         }
-        nuevoValor += char.toLowerCase();
     }
 
     event.target.value = nuevoValor;
-});
-
-textArea.addEventListener("keydown", function (event) {
-    const key = event.key;
-    const acentos = ['á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú'];
-
-    if (acentos.includes(key)) {
-        event.preventDefault();
-    }
-
-    if (key === key.toUpperCase() && key !== key.toLowerCase()) {
-        event.preventDefault();
-        textArea.value += key.toLowerCase();
-    }
 });
